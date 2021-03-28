@@ -43,7 +43,8 @@ Though most of the course work will be cross platform, we will be working on Win
 - [GitExtensions](https://gitextensions.github.io/), [GitHub Desktop](https://desktop.github.com/), (or any other git tool): There are lots of options out there for working with git. If there is a tool you like, use it! 
 
 ## Class Video ##
-We will try to record class presentations so that students can review after class. 
+We will try to record class presentations so that students can review after class. If successful, the recordings will be available here: [RECORDINGS](https://www.dropbox.com/sh/96gbcsqfqb9nghx/AAA6KMSJBceSoO_R8d8fJTnda?dl=0).
+
 Please note:
 * **Do not expect or rely on video recordings.**  We are not making any commitment to having video recordings of class. 
 * Please keep all videos ***confidential***. These videos are for people enrolled in this class.  No videos or parts of videos should be distributed or shared with those outside of the class.
