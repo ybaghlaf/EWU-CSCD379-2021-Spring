@@ -22,6 +22,7 @@ ISBN-13: 9780135972267
 Code for the Book: https://github.com/IntelliTect/EssentialCSharp
 
 ## General Information:
+* [Submit Student Information](https://docs.google.com/forms/d/e/1FAIpQLScCTQgRTQDBa4aiaDXj9HPferL7WuL8LoKx8sDaBHwM-a_F8Q/viewform) Google form so we can properly grade assignments and add you to Microsoft Teams.
 * [**Homework/Grading**](Docs/Homework.md)
 * **Office Hours**: Office hours are available before class on Tuesday's and Thursdays starting at 1 PM.  To ensure that an instructor will be available, please schedule an appointment 24-hours beforehand by sending a meeting request email to EWU-Instructors@IntelliTect.com.  Alternative times may be available upon request.
 
