@@ -1,5 +1,7 @@
 @model UserViewModel
 
+@{ViewBag.Title="Create User";}
+
 <form asp-controller="Users" asp-action="Create" method="post">
     <div>
         <label asp-for="FirstName"></label> : <input type="text" asp-for="FirstName"/>

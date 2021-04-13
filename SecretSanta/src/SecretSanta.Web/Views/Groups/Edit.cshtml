@@ -1,0 +1,12 @@
+@model GroupViewModel
+
+@{ViewBag.Title="Edit Group";}
+
+<form asp-controller="Groups" asp-action="Edit" method="post">
+    <div>
+        <label asp-for="GroupName"></label> : <input type="text" asp-for="GroupName"/>
+        <span asp-validation-for="GroupName"></span>
+    </div>
+
+    <button>Save</button>
+</form>

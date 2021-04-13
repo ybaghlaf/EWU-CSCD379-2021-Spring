@@ -5,11 +5,11 @@
     int counter = 0;
     foreach(var user in Model){
         <section>
-            @user.FirstName @user.LastName <a asp-asp-controller="Users" asp-action="Edit" asp-route-id=counter>Edit</a>
+            First Name: @user.FirstName - Last Name: @user.LastName <a asp-asp-controller="Users" asp-action="Edit" asp-route-id=@counter>Edit</a>
+            <form asp-controller="Users" asp-action="Delete" asp-route-id=@counter method="post"><button>X</button></form>
             @{counter++;}
         </section>
         
     }
 }
 <a asp-controller="Users" asp-action="Create">Create User</a>
-<a asp-controller="Users" asp-action="Delete">Delete User</a>

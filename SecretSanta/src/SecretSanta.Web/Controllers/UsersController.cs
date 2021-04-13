@@ -29,11 +29,17 @@ namespace SecretSanta.Web.Controllers{
         [HttpPost]
         public IActionResult Edit(UserViewModel user){
             if(ModelState.IsValid){
-            users[user.Id] = user;
-            return RedirectToAction(nameof(Index));
+                users[user.Id] = user;
+                return RedirectToAction(nameof(Index));
             }
 
             return View(user);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id){
+            users.RemoveAt(id);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
