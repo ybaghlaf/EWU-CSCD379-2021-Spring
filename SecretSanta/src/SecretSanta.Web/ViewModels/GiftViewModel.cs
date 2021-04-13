@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace SecretSanta.Web.ViewModels
 {
     public class GiftViewModel
@@ -7,6 +9,7 @@ namespace SecretSanta.Web.ViewModels
         public string Description { get; set; } = "";
         public string Url { get; set; } = "";
         public int Priority { get; set; }
+        [Display(Name="User")]
         public int UserId { get; set; }
     }
 }
