@@ -9,30 +9,20 @@
     <% } %>
     <!-- End Stylesheets -->
     <style>
-        nav{
-            background-color: brown;
-            width: 100%;
-            border-radius: 16px;
-        }
-        ul{
-            list-style: none;
-            display: flex;
-        }
-        ul>li{
-            padding: 16px 8px 16px 0px;
-            text-decoration: none;
-        }
+
     </style>
 </head>
-<body class="bg-green-500 border-separate">
-    <nav>
+<body>
+
+    <nav class="bg-green-500">
         <ul>
-            <li><a asp-controller="Home" asp-action="Index" style="font-size: larger;">Secret Santa</a></li>
+            <li><a asp-controller="Home" asp-action="Index">Secret Santa</a></li>
             <li><a asp-controller="Users" asp-action="Index">Users</a></li>
             <li><a asp-controller="Groups" asp-action="Index">Groups</a></li>
             <li><a asp-controller="Gifts" asp-action="Index">Gifts</a></li>
         </ul>
     </nav>
+    </header>
     @RenderBody()
 
     <!-- Scripts -->
