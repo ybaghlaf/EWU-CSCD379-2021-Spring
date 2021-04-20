@@ -1,3 +1,4 @@
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using SecretSanta.Web.Data;
 using SecretSanta.Web.ViewModels;
@@ -8,7 +9,8 @@ namespace SecretSanta.Web.Controllers
     {
         public IActionResult Index()
         {
-            return View(MockData.Gifts);
+            var gifts = MockData.Gifts.OrderBy(g => g.Priority).ToList();
+            return View(gifts);
         }
 
         public IActionResult Create()
@@ -21,6 +23,7 @@ namespace SecretSanta.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                viewModel.Id = MockData.Gifts.Max(g => g.Id) + 1;
                 MockData.Gifts.Add(viewModel);
                 return RedirectToAction(nameof(Index));
             }
@@ -30,7 +33,7 @@ namespace SecretSanta.Web.Controllers
 
         public IActionResult Edit(int id)
         {
-            return View(MockData.Gifts[id]);
+            return View(MockData.Gifts.Single(g => g.Id == id));
         }
 
         [HttpPost]
@@ -38,7 +41,7 @@ namespace SecretSanta.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                MockData.Gifts[viewModel.Id] = viewModel;
+                MockData.Gifts[MockData.Gifts.FindIndex(g => g.Id == viewModel.Id)] = viewModel;
                 return RedirectToAction(nameof(Index));
             }
 
@@ -48,7 +51,7 @@ namespace SecretSanta.Web.Controllers
         [HttpPost]
         public IActionResult Delete(int id)
         {
-            MockData.Gifts.RemoveAt(id);
+            MockData.Gifts.Remove(MockData.Gifts.Single(g => g.Id == id));
             return RedirectToAction(nameof(Index));
         }
     }
