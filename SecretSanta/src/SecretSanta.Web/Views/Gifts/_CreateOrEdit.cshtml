@@ -1,28 +1,64 @@
 @model GiftViewModel
 
-<div>
-    <label asp-for="Title"></label>
-    <input type="text" asp-for="Title" />
-    <span asp-validation-for="Title"></span>
-</div>
-<div>
-    <label asp-for="Description"></label>
-    <input type="text" asp-for="Description" />
-    <span asp-validation-for="Description"></span>
-</div>
-<div>
-    <label asp-for="Url"></label>
-    <input type="text" asp-for="Url" />
-    <span asp-validation-for="Url"></span>
-</div>
-<div>
-    <label asp-for="Priority"></label>
-    <input type="text" asp-for="Priority" />
-    <span asp-validation-for="Priority"></span>
-</div>
-<div>
-    <label asp-for="UserId"></label>
-        <select asp-for="UserId" asp-items="@(new SelectList(MockData.Users, "Id", "FullName"))">
-            <option>Please select one</option>
-        </select>
-</div>
+<div asp-validation-summary='All'></div>
+
+<section class="mt-6 mb-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3" >
+    <div class="flex mb-6">
+        <div class="flex w-1/2">
+            <div class="w-2/3">
+                <label class="font-bold text-gray-500" asp-for="Title"></label>
+            </div>
+            <div class="flex w-2/3">
+                <input class="border border-indigo-300 rounded-md" type="text" asp-for="Title" />
+            </div>
+        </div>
+    </div>
+
+    <div class="flex mb-6">
+        <div class="flex w-1/2">
+            <div class="w-2/3">
+                <label class="font-bold text-gray-500" asp-for="Description"></label>
+            </div>
+            <div class="flex w-2/3">
+                <input class="border border-indigo-300 rounded-md" type="text" asp-for="Description" />
+            </div>
+        </div>
+    </div>
+
+    <div class="flex mb-6">
+        <div class="flex w-1/2">
+            <div class="w-2/3">
+                <label class="font-bold text-gray-500" asp-for="Url"></label>
+            </div>
+            <div class="flex w-2/3">
+                <input class="border border-indigo-300 rounded-md" type="text" asp-for="Url" />
+            </div>
+        </div>
+    </div>
+
+    <div class="flex mb-6">
+        <div class="flex w-1/2">
+            <div class="w-2/3">
+                <label class="font-bold text-gray-500" asp-for="Priority"></label>
+            </div>
+            <div class="flex w-2/3">
+                <input class="border border-indigo-300 rounded-md" type="text" asp-for="Priority" />
+            </div>
+        </div>
+    </div>
+
+    <div class="flex mb-6">
+        <div class="flex w-1/2">
+            <div class="w-2/3">
+                <label class="font-bold text-gray-500" asp-for="UserId"></label>
+            </div>
+            <div class="flex w-2/3">
+                <select class="border border-indigo-300 rounded-md" asp-for="UserId" asp-items="@(new SelectList(MockData.Users, "Id", "FullName"))">
+                <option>Please select one</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>

@@ -7,6 +7,6 @@
 <form asp-controller="Groups" asp-action="Edit" method="post">
     <input type="hidden" asp-for="Id" />
     @await Html.PartialAsync("_CreateOrEdit")
-    <button>Update</button>
-    <a asp-controller="Groups" asp-action="Index">Cancel</a>
+    <button class="px-4 py-2 mr-2 leading-10 bg-blue-300 border-blue-800 rounded-xl hover:bg-yellow-500s">Update</button>
+    <a class="inline-block px-4 py-2 leading-10 bg-blue-300 border-blue-800 rounded-xl hover:bg-yellow-500" asp-controller="Groups" asp-action="Index">Cancel</a>
 </form>

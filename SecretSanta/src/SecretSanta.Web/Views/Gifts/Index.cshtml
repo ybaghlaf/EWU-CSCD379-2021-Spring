@@ -5,11 +5,13 @@
 }
 
 @{int counter = 0;}
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
 
-@foreach(var groupViewModel in Model) {
-    <section>
-        @groupViewModel.Title <a asp-action="Edit" asp-route-id=@counter>Edit</a><form asp-action="Delete" asp-route-id=@counter method="post"><button>X</button></form>
-        @{counter++;}
-    </section>
-}
-<a asp-action="Create">Create</a>
+    @foreach(var giftViewModel in Model) {
+            <section class="p-6 m-5 border-2 border-gray-500 rounded-2xl">
+                @giftViewModel.Title <a class="inline-block px-4 py-2 leading-10 bg-blue-300 border-blue-800 rounded-xl hover:bg-yellow-500" asp-action="Edit" asp-route-id=@counter>Edit</a> <form asp-action="Delete" asp-route-id=@counter method="post"><button class="inline-block px-4 py-2 leading-10 bg-blue-300 border-blue-800 rounded-xl hover:bg-yellow-500" onclick="return confirm('Delete @giftViewModel.Title?')">X</button></form>
+                @{counter++;}
+            </section>
+    }
+</section>
+    <a class="inline-block px-4 py-2 leading-10 bg-blue-300 border-blue-800 rounded-xl hover:bg-yellow-500" asp-action="Create">Create</a>
