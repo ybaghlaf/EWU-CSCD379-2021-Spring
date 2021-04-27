@@ -2,6 +2,7 @@
 using System.Net;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SecretSanta.Api.Dto;
 using SecretSanta.Business;
 using SecretSanta.Data;
 
@@ -19,13 +20,13 @@ namespace SecretSanta.Api.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<User> Get()
+        public IEnumerable<UserDto> Get()
         {
             return Repository.List();
         }
 
         [HttpGet("{id}")]
-        public ActionResult<User?> Get(int id)
+        public ActionResult<UserDto?> Get(int id)
         {
             User? user = Repository.GetItem(id);
             if (user is null) return NotFound();
@@ -33,6 +34,8 @@ namespace SecretSanta.Api.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
         public ActionResult Delete(int id)
         {
             if (Repository.Remove(id))
@@ -43,7 +46,9 @@ namespace SecretSanta.Api.Controllers
         }
 
         [HttpPost]
-        public ActionResult<User?> Post([FromBody] User? user)
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(User), (int)HttpStatusCode.OK)]
+        public ActionResult<UserDto?> Post([FromBody] UserDto? user)
         {
             if (user is null)
             {
@@ -53,7 +58,10 @@ namespace SecretSanta.Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] User? user)
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public ActionResult Put(int id, [FromBody] UpdateUser? user)
         {
             if (user is null)
             {
