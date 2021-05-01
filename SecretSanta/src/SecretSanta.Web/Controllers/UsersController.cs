@@ -80,7 +80,7 @@ namespace SecretSanta.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-            var response = await UserClient.DeleteAsync(id);
+            await UserClient.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
     }
