@@ -61,6 +61,8 @@ namespace SecretSanta.Api.Controllers
         }
 
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult Put(int id, [FromBody] User? user)
         {
             if (user is null)
