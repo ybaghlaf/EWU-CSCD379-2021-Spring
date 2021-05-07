@@ -38,8 +38,9 @@ jobs:
       run: dotnet test --no-build --verbosity normal
       
     - name: Verify Build Badge
+      working-directory: ./
       shell: pwsh
       run: |
         echo "This is a test"
         Write-Host "This is another test"
-        Get-Item "${{env.DOTNET_ROOT}}" README.md
+        Get-Item ./README.md
