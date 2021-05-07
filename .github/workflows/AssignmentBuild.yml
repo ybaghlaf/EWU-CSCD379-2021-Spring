@@ -42,4 +42,4 @@ jobs:
       run: |
         echo "This is a test"
         Write-Host "This is another test"
-        Get-Item README.md
+        Get-Item "${{env.DOTNET_ROOT}}" README.md
